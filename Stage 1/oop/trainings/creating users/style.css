@@ -1,0 +1,62 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+}
+
+#main{
+    margin: 100px auto;
+    width: 80%;
+    /* background: grey; */
+    padding: 0 5px;
+    display: flex;
+    justify-content: center;
+}
+
+#main .user-wrapper {
+    display: inline-block;
+    text-align: center;
+    margin: 10px 5px;
+    padding: 30px 50px 40px;
+    background: #fafafa;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    width: 180px;
+    color: rgb(68, 88, 110);
+}
+
+#main .plus-card{
+    background: rgba(250, 250, 250, 0.8);
+    display: inline-block;
+    width: 280px;
+    padding: 100px 0;
+    color: rgb(167, 182, 196);
+    vertical-align: center;
+    order: 1;
+    transition: all 0.5s;
+}
+
+#main .plus-card:hover{
+    color: rgb(86, 109, 133);
+}
+
+#main .plus-card .fas{
+    display: block;
+    font-size: 40px;
+}
+
+#main .plus-card span{
+    display: block;
+    margin-top: 15px; 
+    font-size: 22px;
+}
+
+#main .user-img {
+    border-radius: 100%;
+    width: 120px;
+    height: 120px;
+}
+
+#main .secondary-text {
+    color: #bababa;
+    margin-top: 25px;
+}

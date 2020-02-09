@@ -1,0 +1,21 @@
+body{
+    background-color: black;
+}
+
+#display{
+    color: gold;
+    font-family: monospace;
+    font-size: 200px;
+    text-align: center;
+    margin-top: 200px;
+}
+
+.overlay{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-image: radial-gradient(transparent 40%, black 45%);
+    background-size: 5px 5px;
+}

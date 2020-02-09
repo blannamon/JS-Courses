@@ -1,0 +1,18 @@
+<script>
+// DATABASE
+    secret_username = "admin"
+    secret_password = "1234"
+
+// USER INPUT
+    username = prompt("Type your username")
+    password = prompt("Type your password")
+
+// LOGIC
+    access = secret_username == username && secret_password == password    
+
+// ALERT
+    // alert("Access: " + access)
+    document.write("<h1>Access: " + access + "</h1>")
+    // document.write('<img src="false.png">')
+    document.write('<img src="' + access + '.png">')
+</script>

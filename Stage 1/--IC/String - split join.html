@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <p>Please wait 800 ms until the results show up.</p>
+
+    <p id="demo"></p>
+
+    <script>
+        function isSpace(symbol){
+            return symbol !== " " && symbol !== "?";
+        }
+        function removeSpaces(strReverse){
+            return strReverse.filter(isSpace);
+            
+        }
+        function myFunction() {
+            var demmo = document.getElementById("demo");
+            var str = prompt("Type a phrase you want to reverse and unspace:");
+            var strSplit = str.split("");
+            // var strReverse = strSplit.reverse(); // the function string.reverse() makes a string reversed. 
+            // var strReverse = strSplit; 
+            var strNoSpace = removeSpaces(strSplit);
+            demmo.innerHTML = `
+            Phrase: ${str}<br>
+            Split phrase: ${strSplit}<br>
+            Split and w/out spaces: ${strNoSpace}<br>
+            Split, no spaces, joined: ${strNoSpace.join("")}
+            `;
+            
+        }
+        setTimeout(myFunction, 800);
+    </script>
+
+</body>
+
+</html>

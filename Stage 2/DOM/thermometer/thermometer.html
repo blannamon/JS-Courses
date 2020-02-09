@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="thermometer.css">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <div>
+        <input id="temperature-input" placeholder="Type temperature value here" onkeyup="updateThermometer()">
+        <select name="temperature-ddown" id="temperature-ddown" onchange="convertValues()">
+            <option value="Celsium">Celsium</option>
+            <option value="Fahrenheit">Fahrenheit</option>
+        </select>
+    </div>
+    <div id="thermometer">
+        <div id="thermometer-indicator" style="width:60px;">
+        </div>
+        <div id="thermometer-digits">
+            <span>-20
+            </span><span>-10
+            </span><span>0
+            </span><span>10
+            </span><span>20
+            </span><span>30
+            </span><span>40
+            </span><span>50
+            </span>
+        </div>
+    </div>
+    <script src="thermometer.js"></script>
+</body>
+
+</html>

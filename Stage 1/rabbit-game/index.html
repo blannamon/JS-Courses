@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rabbit Game</title>
+    <style>
+        #controls button{
+            font-size: 25px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    
+<p id="map" align="center">
+
+</p>
+<p id="controls" align="center">
+    <button onclick="moveLeft()">&#8701;</button>
+    <button onclick="moveRight()">&#8702;</button>
+</p>
+
+<script>
+
+
+let coord_r = 5;
+let coord_c = 1;
+let coord_b = 10;
+let path_end = 15
+
+// Print the map
+function printMap(){
+
+    // 1. find paragraph tag
+    let map = document.getElementById("map")
+        //1.1 clear old map
+        map.innerHTML = ""
+
+    // 2. update paragraph
+    for(let n = 1; n <= 10; n++){
+        if (n == coord_r){
+            map.innerHTML += '<img src="images/rabbit.png">'
+        } 
+        else if(n == coord_c){
+            map.innerHTML += '<img src="images/carrot.png">'
+        } 
+        else if(n == coord_b){
+            map.innerHTML += '<img src="images/bomb.png">'
+        } 
+        else{
+            map.innerHTML += '<img src="images/grass.png">'
+        }
+    }
+
+}
+
+// Moves the rabbit to the right
+function moveRight(){
+    coord_r++;
+    if(coord_r > 10){
+        coord_r = 1;
+    }
+    if(coord_r == coord_b){
+        document.write('<img style="width: 100%" src="images/explosion.gif">')
+    }
+    else{
+        printMap();
+    }
+
+    if (coord_r == coord_c) {
+        alert("Woohoo!");
+        coord_c = -1;
+    }
+
+}
+
+// Moves the rabbit to the left
+function moveLeft(){
+    coord_r--;
+    if (coord_r < 1) {
+        coord_r = 10;
+    }
+    if(coord_r == coord_b){
+        document.write('<img style="width: 100%" src="images/explosion.gif">')
+    }
+    else{
+        printMap();
+    }
+
+    if (coord_r == coord_c) {
+        alert("Woohoo!");
+        coord_c = -1;
+    }
+
+}
+
+printMap();
+
+</script>
+
+</body>
+</html>

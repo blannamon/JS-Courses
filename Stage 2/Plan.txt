@@ -1,0 +1,18 @@
+Array
+OOP / Classes / Objects
+-----------------------
+DOM (Document Object Model)
+ • Nodes, Elements, Styles, Events
+
+Resources
+ • Media
+
+BOM (Browser Object Model)
+ • location, storage, cache, fetch/ajax, incorporated validation, ...
+
+
+---------------------- 
+arrow functions + callback
+collections (Set, Map,...)
+advanced Objects ?
+async (Promises, async/await)

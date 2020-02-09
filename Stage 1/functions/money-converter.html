@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    
+    #money-output{
+        text-align: center;
+        font-size: 22px;
+        margin-top: 100px;
+        line-height: 32px;
+    }
+    
+    </style>
+</head>
+<body>
+
+    <p id="money-output"></p>
+
+
+<script>
+    // Задача:
+    // вы должны всего лишь дополнить код обозначенный // ??? так чтобы конвертер смог преобразовывать из любой (USD, EUR) в MDL
+
+    const EUR_2_MDL = 18.50
+    const USD_2_MDL = 17.00
+
+    function convert(money, сoefficient) {
+        let result = money * сoefficient;
+        return result;
+    }
+
+    // USAGE
+    let money_eur = prompt("Please type amount of money in EUR you want to convert")
+    let money_usd = prompt("Please type amount of money in USD you want to convert")
+    let money_eur_mdl = convert(money_eur, EUR_2_MDL)
+    let money_usd_mdl = convert(money_usd, USD_2_MDL)
+
+    let money_output = document.getElementById('money-output') 
+
+    money_output.innerHTML = `
+        Converted sum of ${money_eur} EUR: <b>${money_eur_mdl} MDL</b><br>
+        Converted sum of ${money_usd} USD: <b>${money_usd_mdl} MDL</b>
+    `
+
+</script>
+
+</body>
+</html>

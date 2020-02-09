@@ -1,0 +1,21 @@
+#world{
+    margin: 50px auto;
+    width: 500px;
+    height: 500px;
+    background-color: #bbb;
+    cursor: url(images/target.png) 32 32, auto;
+    overflow: hidden;
+}
+
+#bird_b{
+    animation: fly 2s infinite alternate;
+}
+
+@keyframes die{
+    from{transform: translateY(0) rotate(0);}
+    to{transform: translateY(500px) rotate(720deg);}
+}
+@keyframes fly{
+    from{transform: translateX(0);}
+    to{transform: translateX(436px);}
+}

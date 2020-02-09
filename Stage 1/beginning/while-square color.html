@@ -1,0 +1,24 @@
+<style>
+    body{
+        margin: 0;
+    }
+    div{ 
+        width: 20px; 
+        height: 20px; 
+        background: black; 
+        border: 1px solid #666;
+        float: left;
+    }
+</style>
+
+<script>
+
+let size = Math.floor( (innerWidth - 16) / 22 )
+let n = 1
+
+while( n <= size * size){
+    document.write( "<div></div>" )
+    n++
+}
+
+</script>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Getting money from the safe</title>
+  <style>
+    body{
+      position: relative;
+      height: 100vh;
+    }
+    #cash-button{
+      position: absolute;
+      top: 100px;
+      right: 0;
+      left: 0;
+      margin: auto;
+      height: 40px;
+      width: 120px;
+      background: none;
+      border-style: none;
+      border: 1px solid olivedrab;
+      color: olivedrab;
+      font-size: 16px;
+      transition: all 0.3s;
+      outline: none;
+    }
+    #cash-button:hover{
+      background-color: olivedrab;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+    <button onclick="getCash()" id="cash-button">Get Money</button>
+    <script>
+
+    let safe = 500.00;
+
+    function getCash(){
+      let money = prompt("How much money do you want ?");
+      let moneyLeft = safe - money;
+
+      if (money == null || money == ""){
+        alert("You have not entered a value")
+      } 
+      else {
+        if(isNaN(moneyLeft) == false){
+          switch(moneyLeft >= 0){
+            case false:
+              alert(`Not enough money to get $${money}`);
+              break;
+            default:
+              safe = moneyLeft;
+              alert("Money left: $" + safe);
+          }
+        } 
+        else {
+            alert("Probably you have entered a string instead of a number")
+        }
+      }
+    }
+    </script>
+</body>
+</html>

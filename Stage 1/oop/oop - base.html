@@ -1,0 +1,26 @@
+<script>
+
+    // OOP - Object Oriented Programming
+
+    // Class - ( можно ассоцировать с .MyClass )
+    // Object - ( можно ассоциировать с <element> )
+
+
+    // Literal object
+    let dog = {
+        name: "Ross", // (key : value) / (property: value)
+        race: "Huskey", 
+        color: "White",
+        age: 10
+    }
+
+    // alert( dog ) // [object Object]
+
+    console.log( dog ) // {name: "Ross", race: "Huskey", color: "White", age: 10}
+    dog.owner = "Kate"
+
+    alert( `The dog name is ` + dog.name + `, he's ${dog.owner}'s pet` ) // "The dog name is Ross, he's Kate's pet"
+    console.log( dog.name ) // "Ross"
+
+    delete dog.age // удаляет свойство из объекта
+</script>

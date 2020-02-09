@@ -1,0 +1,37 @@
+<script>
+
+class Dog {     // classes in JS are named with *PascalCase* (not *camelCase* !)
+    // CLASS - template for future objects
+    // structure -> objects
+    bark(){
+        alert("Whooof!")
+    }
+    eat(food){
+        alert(`Dog eats ${food} gramms of food`)
+    }
+    isFriend(animal){
+        if(animal.toLowerCase() == "cat"){ // Cat => cat
+            return `Dogs and cats don't like each other`
+        }
+        else if(animal.toLowerCase() == "human"){
+            return `Dogs and humans can be friends`
+        }
+        else if(animal.toLowerCase() == "dog"){
+            return `There is a 50/50 chance that two dogs can be friends`
+        }
+    }
+}
+
+// create a few dogs
+let dog1 = new Dog()
+let dog2 = new Dog() 
+let dog3 = {}
+
+// console.log(dog1) // Dog{}
+// console.log(dog2) // Dog{}
+// console.log(dog3) // {}
+
+
+
+
+</script>

@@ -1,0 +1,66 @@
+<style>
+#box {
+    font-size: 50px;
+    text-align: center;
+    padding: 50px;
+    width: 950px;
+    background-color: #fafafa;
+    border-radius: 20px;
+    margin: 50px auto 0;
+    color: #666;
+    text-align: left;
+}
+
+#box blockquote{
+    font-size: 35px;
+    font-weight: bold;
+    margin-top: 10px;
+    text-align: center;
+}
+</style>
+<div id="box"></div>
+<script>
+
+// Сделать компонент-карусель
+/*
+    Цитаты взяты с:
+    https://www.goodreads.com/quotes
+*/
+
+let quotes = [
+    "Be yourself; everyone else is already taken.",
+    "So many books, so little time!",
+    "A room without books is like a body without a soul.",
+    "You only live once, but if you do it right, once is enough.",
+    "Be the change that you wish to see in the world."
+]
+
+let current = 0;
+
+
+function showQuote( i ){
+    // Ищем элемент по ID и, как результат, получаем объект
+    let div = document.getElementById('box');
+    let color;
+    (quotes[i].endsWith("!") == true) ? color = "red" : color = "#666";
+    // Внутрь объекта div вставляем соответствующую цитату
+            // (div.innerHTML) ? div.innerHTML += "<br>" + quotes[i] : div.innerHTML = quotes[i];
+    div.innerHTML = `&ldquo;<blockquote style="color: ${color};">
+                     ${quotes[i]}
+                     </blockquote>&ldquo;`;
+
+}
+
+// Отображаем quotes[0] и сразу увеличиваем значение current на +1. Таким образом, вызванная функция начнёт показывать цитату уже с quotes[1], а не с quotes[0]. 
+showQuote(current++)
+
+// setInterval( function(){ console.log('OK') }, 500) // closures
+setInterval( function(){ 
+    showQuote(current);
+    current++;
+    if(current > 4){
+        current = 0;
+    }
+}, 1000) // closures
+
+</script>

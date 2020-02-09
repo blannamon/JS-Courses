@@ -1,0 +1,37 @@
+<script>
+
+//  Создаём объект, соответствующий городу
+let Country = {
+    name: "Moldova",
+    population: 2500000,
+    national_food: "Mamaliga",
+    national_drink: "Wine"
+}
+
+let city = {
+    name: "Chisinau",
+    population: 800000,
+    country: Country,
+    area: 123,
+    url: "http://chisinau.md",
+    postal_code: "MD-20xx",
+    img: "http://media.autoblog.md/2017/11/chisinau.jpg",
+    money: ["MDL", "EUR", "USD"]
+}
+
+// -----------------------------------------------------
+
+document.write(`
+<div style="width: 600px; margin: 50px auto;">
+    <img style="width: 100%" src="${city.img}"/>
+    <h1>${city.name}, ${city.country.name}</h1>
+    <h3>Area: ${city.area} square meters</h3>
+    <h3>Population: ${city.population}</h3>
+    <h3>Postal code: ${city.postal_code}</h3>
+    <h3>URL: <a href="${city.url}">${city.url}</a></h3>
+    <h3>Money usage: ${city.money.join(", ")}</h3>
+</div>
+`)
+
+
+</script>

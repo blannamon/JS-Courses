@@ -1,0 +1,24 @@
+<script>
+
+// Data
+food_1_name = "Spaghetti"
+food_1_price = 20
+food_2_name = "Pizza"
+food_2_price = 35
+
+// Output
+alert(
+    "★★★★★ MENU ★★★★★" + "\n" +
+    "1. 🍝 " + food_1_name + "  " + food_1_price + " MDL" + "\n" +
+    "2. 🍕 " + food_2_name + "  " + food_2_price + " MDL" + "\n" + 
+    "★★★★★★★★★★★★★★"
+)
+
+food_1_quantity = prompt("How many " + food_1_name + " would you like to eat?")
+food_2_quantity = prompt("How many " + food_2_name + " would you like to eat?")
+
+total = food_1_quantity * food_1_price + food_2_quantity * food_2_price
+console.log("You should pay " + total + "$")
+alert("You should pay " + total + "$")
+
+</script>

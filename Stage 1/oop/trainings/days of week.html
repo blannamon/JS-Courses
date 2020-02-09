@@ -1,0 +1,22 @@
+<script>
+    let week = {
+        1: "Monday",
+        2: "Tuesday",
+        3: "Wednesday",
+        4: "Thursday",
+        5: "Friday",
+        6: "Saturday",
+        7: "Sunday"
+    }
+
+    // console.log(week.1) // НЕ СРАБАТЫВАЕТ
+    document.write(week[1]) // СРАБАТЫВАЕТ ОКЕЙ (обращаемся к ассоциативному массиву, и поэтому такой синтаксис - week[1]?)
+
+    week.weekend = {
+        begin: week[6],
+        end: week[7]
+    }
+
+    document.write("<br><b>Weekend: </b>" + week.weekend.begin + ", " + week.weekend.end)
+
+</script>

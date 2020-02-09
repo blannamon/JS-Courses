@@ -1,0 +1,68 @@
+.closed{
+    border: 1px solid white;
+    padding: 20px;
+    background-color: #ddd;
+    width: 200px;
+}
+
+.open{
+    padding: 20px;
+    border: 1px solid white;
+    background-color: #ddd;
+    height: 300px;
+    width: auto;
+    max-width: 200px;
+}
+
+.open ul{
+    padding-left: 26px;
+}
+
+.open ul li{
+    margin-top: 10px;
+}
+
+.open ul .stars__container{
+    display: inline-block;
+    position: relative;
+}
+.open ul .yellow-stars{
+    position: absolute;
+    display: inline-block;
+    left: 0;
+}
+
+.open ul li .rating{
+    color: rgb(255, 187, 0);
+}
+.open ul li .rating-grey{
+    color: rgb(168, 168, 168);
+}
+
+button{
+    background: #999;
+    padding: 0;
+    outline: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 1px solid white;
+    color: white;
+    /* font-weight: bold; */
+}
+
+.userpic{
+    width: 34px;
+    height: 34px;
+    border-radius: 100%;
+    vertical-align: bottom;
+}
+
+.username{
+    margin-left: 5px;
+    display: inline-block;
+    font-weight: bold;
+    font-size: 20px;
+    /* width: calc(100% - 34px - 25px - 20px); */
+    vertical-align: bottom;
+}

@@ -1,0 +1,45 @@
+<script>
+
+let bookShelf = {
+    top: null,
+    middle: null,
+    bottom: null,
+    render: function(){
+        document.write(`Bookshelf's top level has ${bookShelf.top}, middle level - ${bookShelf.middle}, bottom level - ${bookShelf.bottom}<br><button onclick="askUser()">Add something else</button>`);
+    },
+    reset: function(){
+        document.clear();
+    }
+}
+
+let whereToPut;
+let whatToPut;
+
+function askUser(){
+    whereToPut = prompt('Where would you like to put your something?\n( top / middle / bottom )');
+    if( !bookShelf.hasOwnProperty(whereToPut) ){
+        alert('Error! No such shelf.')
+    }
+    else{
+        whatToPut = prompt(`What exactly would you like to put on a ${whereToPut} shelf?`);
+        if(whatToPut){
+            bookShelf[whereToPut] = whatToPut;
+            bookShelf.reset();
+            bookShelf.render();
+        }
+        else{
+            alert('Put something, not nothing =)');
+        }
+    }
+
+};
+
+askUser();
+
+
+
+// for(let key in bookShelf){
+// }
+// let whatToPut = prompt(`What do you want to put on ${whereToPut}?`)
+
+</script>

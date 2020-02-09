@@ -1,0 +1,27 @@
+    #thermometer-indicator {
+        height: 2px;
+        background: red;
+    }
+
+    #temperature-input {
+        width: 210px;
+    }
+    #thermometer{
+        margin-top: 10px;
+    }
+
+    #thermometer-digits {
+        font-family: monospace;
+    }
+
+    #thermometer-digits span {
+        display: inline-block;
+        width: 29px;
+        /*+1px border=30*/
+        border-left: 1px solid black;
+        /* font-size: 13px; */
+    }
+
+    #temperature-ddown{
+        margin-left: 20px;  
+    }

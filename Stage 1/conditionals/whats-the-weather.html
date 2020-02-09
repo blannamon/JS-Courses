@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>What's the weather today?</title>
+</head>
+<body>
+
+    <script>
+        let w_answer = prompt("Hello! I am Wobo. Tell me what's the weather outside now and I'll show you the right icon.")
+        
+        switch(w_answer){
+            case "cloudy":
+            case "Cloudy":
+            case "clouds":
+            case "Clouds":
+            case "cloud":
+            case "Cloud":
+                document.write('<div style="text-align: center; margin-top: 200px"><img style="width: 128px;" src="weather-icons-master/svg/wi-day-cloudy.svg" alt=""></div>');
+                break;
+            case "sunny": 
+            case "Sunny": 
+            case "sun": 
+            case "Sun": 
+                document.write('<div style="text-align: center; margin-top: 200px"><img style="width: 128px;" src="weather-icons-master/svg/wi-day-sunny.svg"></div>');
+                break;
+            case "rainy":
+            case "Rainy":
+            case "rains":
+            case "Rains":
+            case "rain":
+            case "Rain":
+                document.write('<div style="text-align: center; margin-top: 200px"><img style="width: 128px;" src="weather-icons-master/svg/wi-day-rain.svg"></div>');
+                break;
+            case "snow":
+            case "Snow":
+            case "snows":
+            case "Snows":
+                document.write('<div style="text-align: center; margin-top: 200px"><img style="width: 128px;" src="weather-icons-master/svg/wi-day-snow.svg"></div>');
+                break;
+            case "fog":
+            case "Fog":
+                document.write('<div style="text-align: center; margin-top: 200px"><img style="width: 128px;" src="weather-icons-master/svg/wi-day-fog.svg"></div>');
+                break;
+            case "windy":
+            case "Windy":
+            case "wind":
+            case "Wind":
+                document.write('<div style="text-align: center; margin-top: 200px"><img style="width: 128px;" src="weather-icons-master/svg/wi-day-windy.svg"></div>');
+                break;
+            default:
+                document.write("<div style='text-align: center; color: lightgreen; margin-top: 200px'><h2>Incorrect input! Press 'Ctrl' + 'R' to refresh and try again.</h1>");
+        }
+    
+    </script>
+</body>
+</html>

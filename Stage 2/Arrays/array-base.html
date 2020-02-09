@@ -1,0 +1,41 @@
+Array - ordered data container | <html> -> ol>li
+
+    SAME TYPE !
+
+    <script>
+    
+        // Массивы - zero-based, т.е. порядок в массиве начинается с 0.
+
+        let cities = ["NY", "LA", "Chisinau"] // String
+        let bag = ["Olala", 100, null, undefined, NaN] // лучше так не делать - разные дата типы!
+
+        //THE CODE BELOW WORKS FINE
+            // alert(cities[2]) // "Chisinau"
+            // alert(cities[1]) // "LA"
+            // alert(cities[0]) // "NY"
+
+            // for( let i = 0; i < 3; i++ ){
+            //         alert(cities[i]);
+            // }
+
+    // ----------------------------------
+
+        let salaries = [ 15000, 25000, 30000, 5000, 10000 ]         // Number
+        console.log("Array: " + salaries.join(", "))                // Array: 15000, 25000, 30000, 5000, 10000
+        let pStyle = `
+                font-size: 50px;
+                font-weight: bold;
+        `
+
+        for( let i = 0; i <= 4; i++ ){
+            if( salaries[i] >= 10000 && salaries[i] <= 25000 ){     // 15000, 25000, 10000
+                // console.log( salaries[i]  + ' MDL')              // equals to console.log(`${salaries[i]} MDL`)
+
+                document.write(` <p style="${pStyle}">${salaries[i]} MDL</p> `)
+            }
+        }
+
+        
+
+
+    </script>

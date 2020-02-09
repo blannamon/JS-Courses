@@ -1,0 +1,34 @@
+<script>
+
+// new feature 2020+
+class Car {
+    // model = "BMW";
+    // color = "black";
+    // year = 1991;
+    // volume; //undefined
+    greet(){
+        alert(this.greetMsg )
+    }
+
+    constructor(model, color, year, greetMsg){
+        this.model = model;
+        this.color = color;
+        this.year = year;
+        this.greetMsg = greetMsg;
+    }
+
+    render(){
+        document.write( "<br><b>Model: </b>" + this.model + "<br><b>Color: </b>" + this.color + "<br><b>Year: </b>" + this.year + "<br>")
+    }
+}
+
+let c1 = new Car("BMW", "Black", 1991, "I'm old BMW");
+let c2 = new Car("BMW", "Red", 2019, "I'm new BMW");
+let c3 = [c1, c2]
+
+c1.render()
+c2.render()
+c3[0].render()
+
+
+</script>

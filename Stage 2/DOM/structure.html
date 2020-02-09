@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM Structure</title>
+</head>
+<body>
+    <h1>DOM <small>Structure</small></h1>
+    <!-- Working with code -->
+    <ul>
+        <li>First</li>
+        <li>Second</li>
+        <li>Third</li>
+        <li>Fourth</li>
+        <li>Fifth</li>
+    </ul>
+    <script>
+    
+        // 1. Print text from <small>
+        let small = document.body.firstElementChild.children[0];
+        console.log(small.innerHTML)
+
+        // 2. prompt -> word -> "Third"
+            // ALL OF 'let element3 = ...' WORK WELL
+                // let element3 = document.body.children[1].children[2]
+                // let element3 = document.body.getElementsByTagName('ul')[0].firstElementChild.nextElementSibling.nextElementSibling
+                let element3 = document.body.children[1].lastElementChild.previousElementSibling.previousElementSibling
+                let textToPut = prompt('What would you like to put into the third <li>?')
+                element3.innerHTML = textToPut
+    </script>
+</body>
+</html>

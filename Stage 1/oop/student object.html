@@ -1,0 +1,27 @@
+<script>
+
+let student = {
+    // properties
+    fullName: "John Studenco",
+    gender: "m",
+    dob: {
+        year: 1995,
+        month: 2,
+        day: 10
+    },
+    faculty: "IT",
+
+    // methods - когда функция принадлежит объекту, её называют Методом
+    hello: function(){
+        alert("Hi! My name is " + this.fullName + ". I was born in " + this.dob.year + ".")
+    },
+    bye: function(){
+        alert("Bye!")
+    }
+}
+
+//---------------------------------------------------------------------
+student.hello()
+student.bye()
+
+</script>

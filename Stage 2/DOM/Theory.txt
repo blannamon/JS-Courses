@@ -1,0 +1,38 @@
+DOM v3-4
+
+    page.html --> load --> BROWSER --> 
+                       --> parse --> DOM (in Memory) ---- > render ---- > WINDOW
+                                     JS --> DOM ---- render/update ---- >> WINDOW > user
+                                     JS <-- DOM <--- render/update << ---- WINDOW < user
+
+
+PLAN
+1. DOM Structure
+2. DOM Navigation
+
+LINKS TO LEARN:
+https://learn.javascript.ru/dom-nodes
+https://learn.javascript.ru/dom-navigation
+https://learn.javascript.ru/searching-elements-dom
+
+
+DOM
+Objects img, a, href, src
+Model - схема, по которой строится документ
+
+Основные объекты DOM:
+1. document (структура и методы)
+
+2. Shortcuts
+    • document.title
+    • document.head
+    • document.body
+
+    • document.images  // []
+    • document.links   // []
+    • document.forms   // []
+
+        * Element.6 directions
+
+    Любой станартный атрибут элемента:
+    id, className, src, href, value, placeholder, style...

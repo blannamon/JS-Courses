@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Object Storage</title>
+    <style>
+        #text-box {
+            font-size: 100px;
+            font-family: monospace;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <p id="text-box"></p>
+    <script>
+    // Declaring an object
+        let textBox = document.getElementById("text-box")
+        let storage = {
+            text: "",
+            reset: function(){
+                this.text = ""
+            },
+            append: function(word){
+                (this.text) ? this.text += ", " + word : this.text += word
+            },
+            prepend: function(word){
+                this.text = word + ", " + this.text
+            },
+            render: function(){
+                textBox.innerHTML = storage.text
+            }
+        }
+
+
+        storage.append("in")
+        storage.append("Javascript")
+        storage.prepend("Programming")
+        storage.render()
+        storage.reset()
+        storage.render()
+        storage.append("to")
+        storage.append("learn")
+        storage.append("oop")
+        storage.prepend("has")
+        storage.prepend("One")
+        storage.render()
+
+    </script>
+</body>
+</html>

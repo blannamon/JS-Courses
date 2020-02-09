@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>D3 Library - Swarm</title>
+    <style>
+        body{
+            background: radial-gradient(#900c3f, #581845);
+            height: 98vh;
+        }
+        canvas {
+            position: absolute;
+            top: 0;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="fps">FPS: <span>?</span></div>
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <script>
+        var data = d3.range(500).map(function () {
+            return {
+                xloc: 0,
+                yloc: 0,
+                xvel: 0,
+                yvel: 0
+            };
+        });
+
+        console.log()
+
+        var width = window.innerWidth - 50,
+            height = window.innerHeight - 50,
+            angle = 2 * Math.PI;
+
+        var x = d3.scale.linear()
+            .domain([-5, 5])
+            .range([0, width]);
+
+        var y = d3.scale.linear()
+            .domain([-5, 5])
+            .range([0, height]);
+
+        var time0 = Date.now(),
+            time1;
+
+        var fps = d3.select("#fps span");
+
+        var canvas = d3.select("body").append("canvas")
+            .attr("width", width)
+            .attr("height", height);
+
+        var context = canvas.node().getContext("2d");
+        context.fillStyle = "#ffc30f";
+        context.strokeStyle = "#ff5733";
+        context.strokeWidth = 1.5;
+        
+
+        d3.timer(function () {
+            context.clearRect(0, 0, width, height);
+
+            data.forEach(function (d) {
+                d.xloc += d.xvel;
+                d.yloc += d.yvel;
+                d.xvel += 0.04 * (Math.random() - .5) - 0.05 * d.xvel - 0.0005 * d.xloc;
+                d.yvel += 0.04 * (Math.random() - .5) - 0.05 * d.yvel - 0.0005 * d.yloc;
+                context.beginPath();
+                context.arc(x(d.xloc), y(d.yloc), Math.min(1 + 1000 * Math.abs(d.xvel * d.yvel), 10), 0,
+                    angle);
+                context.fill();
+                context.stroke();
+            });
+
+            time1 = Date.now();
+            fps.text(Math.round(1000 / (time1 - time0)));
+            time0 = time1;
+        });
+    </script>
+</body>
+</html>

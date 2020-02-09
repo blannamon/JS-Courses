@@ -1,0 +1,28 @@
+<script>
+
+// * * *
+// * * *
+// * * *
+
+let size = +prompt("What square size do you prefer?")
+let n = 1
+
+while( n <= size * size){
+    document.write( "*" )
+    document.write( " " )
+
+    // if( n == 3 || n == 6 || n == 9 ){
+    //     document.write( "<br>" )
+    // }
+
+// СКРИПТ ВЫШЕ ДАЁТ ПОЧТИ ТАКОЙ ЖЕ РЕЗУЛЬТАТ, КАК И СКРИПТ НИЖЕ
+
+    if( n % size == 0 ){
+        document.write( "<br>" )
+    }
+
+    n++
+    
+}
+
+</script>

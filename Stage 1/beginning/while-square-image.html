@@ -1,0 +1,36 @@
+<style>
+
+body{
+    text-align: center;
+}
+
+</style>
+
+<script>
+
+// * * *
+// * * *
+// * * *
+
+let size = 7
+let n = 1
+
+while( n <= (size * size - 1) ){
+
+    if( n <= 6 ){
+        document.write( `<img src='http://lorempixel.com/150/150/abstract/${n}'>` )
+    } else {
+        document.write(`<img src='http://lorempixel.com/458/150/abstract/${n}'>`)  
+    }
+
+    document.write( " " )
+
+    if( n % size == 0 ){
+        document.write( "<br>" )
+    }
+
+    n++
+    
+}
+
+</script>

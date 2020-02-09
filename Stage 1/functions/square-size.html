@@ -1,0 +1,22 @@
+<script>
+
+let mainColor = "lightgreen"
+
+function drawSquare( size, color ){
+
+    document.write(
+        `<div style="
+            background-color: ${color};
+            width: ${size}px;
+            height: ${size}px;
+        "></div>`
+    )
+}
+
+drawSquare(30, "red");
+drawSquare(200, mainColor);
+drawSquare(50, "blue");
+drawSquare(200, "black");
+drawSquare(30, "purple");
+
+</script>

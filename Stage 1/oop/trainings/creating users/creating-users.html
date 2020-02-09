@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Creating users with JS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="main">
+        <div class="plus-card user-wrapper" onclick="addUser()"><i class="fas fa-user-plus"></i><span>Add user</span></div>
+    </div>
+    <script>
+    let users = []
+    let shownUsers = []
+
+    class User {
+        constructor(username, email, password, avatar, born){
+            this.username = username;
+            this.email = email;
+            this.password = password;
+            this.avatar = avatar;
+            this.born = new Date(born);
+        }
+
+        // Function to calculate user's live in days
+        calcDaysAgo(born){
+            let convertedBorn = born.getTime() // Converting creation date of the user into time
+            
+            // Here we just get current time and convert it into miliseconds with a simple script to compare it to the User's creation date 
+                let currentDate = new Date();
+                let currentTime = currentDate.getTime();
+
+            let timeDif = currentTime - convertedBorn;
+            let daysAgo = (timeDif / (1000 * 60 * 60 * 24)).toFixed();
+            return daysAgo;
+
+        }
+
+        render(){
+            let obj = document.getElementById("main");
+            obj.innerHTML += `
+                <div class="user-wrapper">
+                    <h2>${this.username}</h2>
+                    <img class="user-img" src="${this.avatar}">
+                    <p class="secondary-text">born ${this.calcDaysAgo(this.born)} days ago</p>
+                </div>
+            `;
+            // users.push(this);
+            // document.write(`
+            //     <div class="user-wrapper">
+            //         <h2>${this.username}</h2>
+            //         <img class="user-img" src="${this.avatar}">
+            //         <p class="secondary-text">born ${this.calcDaysAgo(this.born)} days ago</p>
+            //     </div>
+            // `)
+        }
+    }
+    
+    let user1 = new User("Ian Hnybe", "blannamon@gmail.com", "123", "https://picsum.photos/id/434/1024/1024", "06/27/1993");
+    let user2 = new User("Ilene Roots", "ilene@gmail.com", "244", "https://picsum.photos/id/444/1024/1024", "03/05/1994");
+    let user3 = new User("Scott Murray", "murray@gmail.com", "2567", "https://picsum.photos/id/494/1024/1024", "03/05/1989");
+    users.push(user1, user2, user3)
+    
+    
+    function addUser(){
+        if(users.length > 0){
+            users[users.length - 1].render();
+            shownUsers.push(users[users.length - 1])
+            users.pop();
+        } 
+        else {
+            alert("Unfortunately, we cannot add more users at the moment.\nThe time will come!");
+        }
+    }
+    </script>
+</body>
+</html>

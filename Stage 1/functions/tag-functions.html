@@ -1,0 +1,39 @@
+<!-- <script>
+
+// Create an HTML image
+function img(url){
+    return `<image src="${url}"/>`;
+}
+
+</script>
+
+<script>
+
+// Calling the function
+document.write(img("http://icons.iconarchive.com/icons/papirus-team/papirus-mimetypes/64/app-x-javascript-icon.png"));
+
+</script> -->
+
+<script>
+// Asking for a text
+let text = prompt("Type a text to print to the screen:");
+let url = prompt("Type a URL to fill in the 'href' attribute:");
+    
+// Declaring functions
+function h1(text){
+    document.write(`<h1>${text}</h1>`);
+    return text;
+}
+
+function a(text, url){
+    document.write(`<a href="${url}">${text}</a>`)
+    return text, url;
+}
+
+// Calling functions
+h1(text);
+a(text, url);
+
+
+</script>
+

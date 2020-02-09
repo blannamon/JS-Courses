@@ -1,0 +1,31 @@
+<!-- H/W Количество звёздочек должно соответствовать рейтингу пользователя -->
+<!--     Всегда выставлять пять серых звёзд с золотым заполнением. -->
+<!--     Посмотреть: Math.ceil(), Math.floor(), Math.round() -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Profile Component</title>
+    <link rel="stylesheet" href="profile.css">
+    <style>
+        #navbar{
+            background-color: #999;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav id="navbar">
+        <!-- Profile component will render here -->
+    </nav>
+
+    <script src="profile.js"></script> <!-- Этот скрипт объявляет функционал -->
+    <!-- Скрипт ниже вызывает его -->
+    <script> 
+        profileComponent.render()
+    </script>
+</body>
+</html>

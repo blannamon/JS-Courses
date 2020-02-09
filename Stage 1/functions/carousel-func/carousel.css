@@ -1,0 +1,26 @@
+body{
+    background-color: #333;
+    text-align: center;
+}
+
+#controls{
+    margin-top: 20px;
+}
+
+#controls button{
+    width: 100px;
+    height: 40px;
+    background-color: transparent;
+    border: 1px solid gold;
+    color: gold;
+    font-size: 15px;
+    outline: none;
+    transition: 0.3s;
+    letter-spacing: 1px;
+    margin: 0 5px;
+}
+
+#controls button:hover {
+    color: #333;
+    background-color: gold;
+}

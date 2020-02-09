@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Clonning Input</title>
+    <style>
+        #box{
+            background-color: green;
+            color: white;
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <input type="text" onkeyup="watch()">
+    <p>Type the width and height of the box (*100px)</p>
+    <div id="box">BOX</div>
+
+    <script>
+    
+        function watch(){
+            let input = document.body.firstElementChild;
+            let p = input.nextElementSibling;
+            p.innerHTML = input.value;
+            let box = document.getElementById('box');
+            box.style.width = input.value;
+            box.style.height = input.value;
+            let num = parseFloat(input.value)
+            switch(num){
+                case num <= 10:
+                box.style.backgroundColor = "lightgreen";
+                break;
+                case num <= 100:
+                box.style.backgroundColor = "green";
+                break;
+                case num <= 1000:
+                box.style.backgroundColor = "darkgreen";
+                break;
+            }        
+        }
+    
+    </script>
+
+</body>
+</html>

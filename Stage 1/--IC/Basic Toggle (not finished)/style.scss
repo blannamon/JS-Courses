@@ -1,0 +1,40 @@
+.toggle-group{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 70px;
+    height: 70px;
+    // border-radius: 100%;
+    // background: #f0f0f0;
+
+    >label{
+        input[type=checkbox]{
+            // display: block;
+            display: none;
+        }
+        .toggle-box{
+            background: red;
+            height: 38px;
+            border-radius: 20px;
+            position: relative;
+            box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.2);
+            
+            .toggle-switcher{
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 5px;
+                margin: auto;
+                width: 30px;
+                height: 30px;
+                border-radius: 100%;
+                background: white;
+                transform: translateX(0);
+                transition: transform 0.3s ease;
+            }
+        }
+    }
+}
