@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bad practices - creating DOM elements</title>
+</head>
+<body>
+
+    <form id="form">
+        <!-- innerHTML -->
+        <input type="text" placeholder="Enter phone number...">
+    </form>
+    <div id="actions">
+        <button onclick="addInput()">+</button>
+    </div>
+    
+    <script>
+
+        function addInput(){
+            let form = document.getElementById('form');
+            // form.innerHTML += '<br><input type="text" placeholder="Enter phone 2 number...">';         ЭТО НЕ ПРОФЕССИОНАЛЬНО!
+
+            // ЭТО ПРОФЕССИОНАЛЬНО.
+            let br = document.createElement('br');  
+            let newInput = document.createElement('input');
+            let inputsCount = form.getElementsByTagName('input').length + 1;
+            newInput.setAttribute('type', 'text');
+            newInput.setAttribute('placeholder', `Enter phone ${inputsCount} number...`);
+            form.appendChild(br);
+            form.appendChild(newInput);
+            
+        }
+
+    </script>
+</body>
+</html>

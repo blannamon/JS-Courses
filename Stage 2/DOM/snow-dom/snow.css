@@ -1,0 +1,41 @@
+body {
+    background-color: #112;
+    /* background-image: url('https://wallpaperaccess.com/full/1128361.jpg'); */
+    overflow: hidden;
+
+}
+
+.flake {
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    position: absolute;
+    animation: fall 2s forwards;
+    animation-timing-function: linear;
+    background-image: radial-gradient(white 70%, transparent);
+}
+
+.flake.sm {
+    transform: scale(0.3);
+    animation-duration: 6s;
+}
+
+.flake.md {
+    transform: scale(0.6);
+    animation-duration: 4s;
+}
+
+.flake.lg {
+    transform: scale(1);
+}
+
+@keyframes fall {
+    from {
+        top: -1%;
+    }
+
+    to {
+        top: calc(101%);
+    }
+}
