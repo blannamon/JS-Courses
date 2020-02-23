@@ -15,12 +15,14 @@ function addFlake(){
     let left = parseInt( Math.random() * (window.innerWidth - 10) );
     flake.style.left = `${left}px`;
     document.body.appendChild(flake);
-    // console.log(document.body.querySelectorAll('.flake').length)
+    console.log(document.body.querySelectorAll('.flake').length)
 
 }
 
+
 function removeFlakes(){
     let snow = document.body.getElementsByClassName('flake');
+    
     let remove = (flake) => {
         // console.log(flake);
         document.body.removeChild(flake);
@@ -31,7 +33,5 @@ function removeFlakes(){
 
 }
 
-
 setInterval(addFlake, 100);
-setInterval(removeFlakes, 2000);
-// removeFlakes()
+setInterval(removeFlakes, 1500);

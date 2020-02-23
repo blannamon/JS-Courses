@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Active Navigation Exaple</title>
+    <style>
+        ul {
+            margin: 0;
+            padding: 100px;
+            background-color: #eee;
+            list-style: none;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        a {
+            font-size: 20px;
+            text-decoration: none;
+            color: #222;
+        }
+
+        a.active {
+            color: orange;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav id="menu">
+        <ul>
+            <li><a href="#">First</a></li>
+            <li><a href="#" class="active">Second</a></li>
+            <li><a href="#">Third</a></li>
+            <li><a href="#">Fourth</a></li>
+            <li><a href="#">Fifth</a></li>
+        </ul>
+    </nav>
+    <script>
+        let menu = document.getElementById('menu');
+        let links = menu.getElementsByTagName('a');
+
+        for(let i in links){
+            links[i].onclick = selectAction;
+        }
+
+        function selectAction() {
+            for(let i of links){
+                i.classList.remove('active')
+                // links[i].className = '';     works as well as the code in the line below
+                // links[i].classList = [];
+            }
+
+            this.classList.add('active');
+        }
+
+        // document.links[0].onclick = selectAction;
+    </script>
+
+</body>
+
+</html>
