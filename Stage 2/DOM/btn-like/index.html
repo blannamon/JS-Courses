@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>SIMPLE LIKE BUTTON</title>
+    <style>
+        body{
+            margin: 0;
+            position: relative;
+            height: 100vh;
+            font-family: monospace;
+        }
+        .btn{
+            position: absolute;
+            top: -100px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            padding: 5px 20px;
+            height: 40px;
+            width: 110px;
+            border: 2px solid #ffa589;
+            background: transparent;
+            color: #ffa589;
+            /* font-weight: bold; */
+            font-size: 18px;
+            outline: none;
+            overflow: hidden;
+            /* filter: hue-rotate(255deg); */
+        }
+
+        .btn.like{
+            animation: getWhite 0.85s cubic-bezier(.32,.67,.45,.99) forwards;
+        }
+
+        .btn.unlike{
+            animation: getRed 0.85s cubic-bezier(.32,.67,.45,.99) forwards;
+        }
+
+        @keyframes getWhite{
+            from{
+                background-color: rgb(255, 80, 80);
+                border-color: #fafafa;
+                color: white;
+            }
+            to{
+                background-color: transparent;
+                border-color: #ffa589;
+                color: #ffa589;
+            }
+        }
+
+        @keyframes getRed{
+            from{
+                background-color: transparent;
+                border-color: #ffa589;
+                color: #ffa589;
+            }
+            to{
+                background-color: #ff7a51;
+                border-color: #fafafa;
+                color: white;
+            }
+        }
+
+        .btn .after{
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            left: 10px;
+            height: 50px;
+            width: 50px;
+            background-color: rgba(255, 238, 81, 0.479);
+            border-radius: 25px;
+            opacity: 0;
+            transition: opacity 0.4s ease-out;
+            /* filter: invert(0.4); */
+            
+        }
+        .btn:hover .after{
+            opacity: 1;
+        }
+
+    </style>
+</head>
+
+<body> 
+
+    <button class="btn like">Like<div class="after"></div></button>
+
+    <script>
+        let btn = document.body.querySelector('.btn');
+
+        let followMouse = (e) => {
+            let x = e.clientX;
+            let y = e.clientY;
+            let circle = btn.querySelector('.after');
+            let circleCont = circle.getBoundingClientRect();
+            let btnCont = btn.getBoundingClientRect();
+            let circleX = circleCont.x;
+            let circleY = circleCont.y;
+            setTimeout(()=>{circle.style.left = `${x - btnCont.left - circleCont.width/2}px`}, 82);
+            setTimeout(()=>{circle.style.top = `${y - btnCont.top - circleCont.height/2}px`}, 82);
+        }
+
+        btn.addEventListener('mousemove', followMouse);
+
+        btn.onclick = like;
+
+        function like()  {
+            btn.classList.replace('like', 'unlike');
+            setTimeout(()=>{btn.innerHTML = 'Unlike'}, 150);
+            btn.onclick = unlike;
+            btn.removeEventListener('mousemove', followMouse);
+        }
+
+        function unlike() {
+            btn.classList.replace('unlike', 'like');
+            btn.onclick = like;
+            btn.innerHTML = '<div class="after"></div>';
+            setTimeout(()=>{btn.innerHTML += 'Like'}, 150);
+            btn.addEventListener('mousemove', followMouse);
+        }
+    </script>
+</body>
+
+</html>
