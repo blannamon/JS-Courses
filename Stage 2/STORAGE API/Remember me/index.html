@@ -4,14 +4,17 @@
     <title>Storage API (JS)</title>
     <style>
         body{
+            margin: 0;
             font-family: sans-serif;
-            min-height: 100vh;
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
         }
         #content {
             text-align: center;
+            position: relative;
+            top: -100px;
         }
         #content .btn{
             padding: 0 12px;
@@ -31,9 +34,9 @@
             background: transparent;
             color: rgb(153, 102, 248);
             height: 36px;
-            box-shadow: 0 1px 0 0 rgb(153, 102, 248);
-            border-bottom-width: 2px;
-            border-bottom-color: rgb(153, 102, 248);
+            box-shadow: 0 0 0 0 rgb(153, 102, 248);
+            /* border-bottom-width: 2px; */
+            /* border-bottom-color: rgb(153, 102, 248); */
 
         }
         #content input{
@@ -42,10 +45,24 @@
             box-sizing: border-box;
             border: 1px solid rgb(153, 102, 248);
             outline: none;
+            margin-right: 10px;
+        }
+        #content svg{
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        /* #content .rect{
+            animation: runDash 1.5s;
+        } */
+        @keyframes runDash{
+            from {stroke-dashoffset: -254;}
+            to {stroke-dashoffset: -762;}
         }
     </style>
 </head>
 <body>
+
     
 <div id="content">
     <h1></h1>
@@ -53,5 +70,7 @@
 </div>
 
     <script src="remember.js"></script>
+
 </body>
 </html>
+

@@ -15,6 +15,10 @@ let showForm = () =>{
     let btn = div.getElementsByTagName('button')[0];
     btn.className = 'btn';
     btn.addEventListener('click', saveData);
+
+    // ANIMATION
+    addSVG(btn);
+    btn.addEventListener('mouseover', () => { setTimeout(() => { runDashes(btn) }, 500) })
 }
 
 // showForm();
@@ -47,11 +51,66 @@ if(localStorage.getItem('user')){
 };
 
 
+
+
+
+
+
+
+
 // BUTTON ANIMATION
 let addSVG = (btn) => {
-    let w = btn.width;
-    let h = btn.height;
-    console.log(w, h)
+    let box = btn.getBoundingClientRect();
+    let w = box.width;
+    let h = box.height;
+
+    // Creating SVG container
+    let svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.setAttribute('width', w);
+    svg.setAttribute('height', h);
+
+    //Creating rectangle inside of SVG
+    let rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+    rect.setAttribute('width', w);
+    rect.setAttribute('height', h);
+    rect.setAttribute('x', 0);
+    rect.setAttribute('y', 0);
+    rect.style = `fill: transparent; stroke: rgb(153, 102, 248); stroke-width: 1; stroke-dasharray: 254; stroke-dashoffset: -254`
+    
+    // Setting connection between elements
+    svg.appendChild(rect);
+    btn.appendChild(svg);
 }
 
+let btn = div.querySelector('button');
 addSVG(btn);
+
+let runDashes = (btn) => {
+    let rect = btn.querySelector('rect');
+    let w = +rect.getAttribute('width');
+    let h = +rect.getAttribute('height');
+    let P = Math.round((w + h) * 2);
+
+
+    let start = -P;
+    rect.style.strokeDashoffset = `${start}`;
+    rect.style.strokeDasharray = `${-start}`;
+    let end = -P * 3;
+    
+    // console.log((start - end))
+    let t = setInterval(() => {
+        let offset = parseInt(rect.style.strokeDashoffset);
+        if(offset > end){
+            --offset;
+            // console.log(offset);
+            rect.style.strokeDashoffset = offset;
+        } else if (offset == end){
+            clearInterval(t)
+            rect.style.strokeDashoffset = start;
+        }
+    }, 4)
+
+}
+
+btn.addEventListener('mouseover', () => { setTimeout(()=>{runDashes(btn)}, 500) });
+
