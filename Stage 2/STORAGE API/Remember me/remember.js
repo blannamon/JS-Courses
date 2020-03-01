@@ -75,7 +75,8 @@ let addSVG = (btn) => {
     rect.setAttribute('height', h);
     rect.setAttribute('x', 0);
     rect.setAttribute('y', 0);
-    rect.style = `fill: transparent; stroke: rgb(153, 102, 248); stroke-width: 1; stroke-dasharray: 254; stroke-dashoffset: -254`
+    let rectP = (w + h) * 2;
+    rect.style = `fill: transparent; stroke: rgb(153, 102, 248); stroke-width: 1; stroke-dasharray: ${rectP}; stroke-dashoffset: -${rectP}`
     
     // Setting connection between elements
     svg.appendChild(rect);
