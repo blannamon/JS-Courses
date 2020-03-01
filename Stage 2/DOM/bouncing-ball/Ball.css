@@ -1,0 +1,10 @@
+body{
+    overflow: hidden;
+}
+.ball{
+    width: 48px;
+    height: 48px;
+    background-image: url(ball.png);
+    /* border: 1px solid #c0c0c0; */
+    position: absolute;
+}

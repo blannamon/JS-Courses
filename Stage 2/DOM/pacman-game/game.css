@@ -1,8 +1,10 @@
-body{
+body {
     background-color: #333;
+    font-family: sans-serif;
+    padding: 20px;
 }
 
-#map{
+#map {
     width: 500px;
     height: 500px;
     border: 5px solid #666;
@@ -14,21 +16,62 @@ body{
     margin: auto;
 }
 
-#map div{
+#map div {
     width: 48px;
     height: 48px;
     border: 1px solid #595;
     float: left;
 }
 
-#map div.pacman{
+#map div.pacman {
     background-image: url(img/pacman.png);
 }
 
-#map div.cherry{
+#map div.pacman.exploding{
+    background-image: url(img/explosion.gif), url(img/pacman.png);
+    background-size: contain, contain;
+    background-repeat: no-repeat, no-repeat;
+    background-position: 50% 50%;
+}
+
+#map div.pacman.healing{
+    background-image: url(img/healing.gif), url(img/pacman.png);
+    background-size: 150% 150%, contain;
+    background-repeat: no-repeat, no-repeat;
+    background-position: 50% 50%;
+    background-blend-mode: saturation;
+}
+
+.right {
+    transform: rotate(0);
+}
+.down {
+    transform: rotate(90deg);
+}
+.left {
+    transform: scaleX(-1);
+}
+.up {
+    transform: rotate(270deg);
+}
+
+
+#map div.cherry {
     background-image: url(img/cherry.png);
 }
 
-#map div.bomb{
+#map div.bomb {
     background-image: url(img/bomb.png);
+}
+
+#status{
+    position: absolute;
+    top: 50px;
+    /* bottom: 0; */
+    left: 50px;
+    /* right: 0; */
+    margin: auto;
+    text-align: center;
+    font-size: 20px;
+    color: #595;
 }

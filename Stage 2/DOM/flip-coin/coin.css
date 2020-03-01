@@ -1,0 +1,40 @@
+#content{
+    width: 1px;
+    height: 500px;
+    margin: auto;
+    
+}
+
+.coin{
+    width: 128px;
+    height: 128px;
+    margin-left: -64px;
+    position: relative;
+    top: 372px;
+    perspective: 500px;
+}
+
+.coin .image{
+    width: 128px;
+    height: 128px;
+    background-image: url(coin.png);
+}
+
+.throw{
+    animation: throw 3s;
+}
+
+@keyframes throw{
+    from{ top: 372px; }
+    50%{ top: 0px; }
+    to{ top: 372px; }
+}
+
+.flip{
+    animation: flip 3s;
+}
+
+@keyframes flip{
+    from{ transform: rotateX(0turn); }
+    to{ transform: rotateX(10turn); }
+}
