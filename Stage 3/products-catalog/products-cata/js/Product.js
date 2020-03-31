@@ -1,4 +1,5 @@
 let parent = document.getElementById('product-grid');
+
 class Product {
    
     constructor( name, category = "All items", images = [], currency = {"amount": undefined, "currency": undefined}, quantity = 0 ) {
@@ -36,5 +37,6 @@ class Product {
         let priceContainer = create('div', infoContainer, 'price-container');
 
         return div    
+
     }
 }
