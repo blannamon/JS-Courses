@@ -1,0 +1,61 @@
+<script>
+// template for objects
+// get / set -- interface
+// private / public 
+
+class Person {
+    constructor(){ 
+        // this.__name
+        // this.__age  
+     // __property считается внутренним свойством, к которому лучше не обращаться.
+
+    }
+    set age( value ){
+        if(value >= 0 && value <= 200 && typeof value == 'number'){
+            Object.defineProperty(this, '__age', {value: value, writable: false})
+        }
+        else{
+            alert('Wrong input data');
+        }
+    }
+    get age(){return this.__age}
+    
+    set name( value ){
+        if(typeof value == 'string'){
+            if(value.length >= 3){
+                if(value === value.trim()){
+                    Object.defineProperty(this, '__name', {value: value, writable: false})
+                } else {alert('Please remove spaces from both sides of the name')}
+            } else {alert('Minimum 3 letters required')}
+        } else {alert('Wrong type of data')}
+    }
+    get name(){return this.__name}
+
+    // The code below doesn't work as expected. Better use 'Object.defineProperty' method.
+    // set human(value){
+    //     this.__human = {value: value, writable: false}
+    // }
+    // get human(){return this.__human}
+        
+
+
+    sayHello(){
+        console.log(`Hello ${this.name}!`)
+    }
+}
+
+// ------------------------------
+let p1 = new Person();
+p1.age = 174;
+p1.name = "Ian";
+// p1.human = true;
+console.log(p1)
+
+// p.__age = 5 // так лучше не делать.
+// p.sayHello();
+    
+
+
+
+
+</script>

@@ -1,0 +1,40 @@
+// OOP
+   // Get / Set
+   // Objects ( freeze, constant, lock, ... )
+
+// functions
+   // arrow functions / anonymous
+   // CALLBACK - async / await / promises
+
+// ES6+
+   // destructuring
+   // spread operator
+
+// Collections
+   // Arrays
+      //Methods
+   // Set, Map, ...
+
+// Networking / Fetch / Post data
+   // JSON
+   // DATA mining
+
+// ------------------------------------------
+
+// NodeJS - basics
+   // modules
+   // cli, npm, npx, webpack, gulp - automation / build
+   // scss ...
+
+   // file system
+   // module management
+   // parsers, transpilers
+   // babel
+
+// ------------------------------------------
+   // REACT
+      // React DOM
+      // JSX - syntax
+      // Create simple react app / install / run
+      // Component
+      // Lifecycle methods
