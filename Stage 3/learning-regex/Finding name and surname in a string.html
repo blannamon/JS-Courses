@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Try 1</title>
+</head>
+<body>
+    <script>
+
+        let s = "Ian Blannamon ibn-al'Khabib 47"
+        let r = /(^\w+)/i;
+        let r2 = /(^\w+ ?)/i;
+        let name = r.exec(s)[0]
+        let surname = s.replace(r2, "")
+        console.log(`Name: "${name}"`)
+        console.log(`Surname: "${surname}"`)
+        // console.log(r.exec(s))
+
+    </script>
+</body>
+</html>

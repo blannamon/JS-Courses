@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Try 3</title>
+</head>
+<body>
+    <script>
+
+        let s = `<p>The <abbr title="World Wide Web Consortium">W3C</abbr> is the main international standards organization for the <abbr title="World Wide Web">WWW or W3</abbr>. It was was founded by Tim Berners-Lee.</p>`
+        
+        let r = /<[^>]*>/g
+        console.log(s.replace(r, ""))
+
+    </script>
+</body>
+</html>

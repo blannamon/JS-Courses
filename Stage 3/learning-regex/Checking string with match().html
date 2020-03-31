@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Try 4</title>
+</head>
+<body>
+    <script>
+
+        let s = `Lorem Ipsum is simply dummy text of the printing, computing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.`
+        
+        console.log(s.match(/\b[\w']+\b/g).sort((a,b) => b.length - a.length)[0])
+
+    </script>
+</body>
+</html>

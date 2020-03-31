@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{box-sizing: border-box;}
+        body {
+            position: relative;
+            height: 100vh;
+        }
+        #content {
+            width: 500px;
+            height: 300px;
+            position: absolute;
+            top: -100px;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            margin: auto;
+        }
+        textarea{
+            width: 100%;
+            height: 70%;
+            border: 1px solid lightgrey;
+            display: block;
+            margin-bottom: 15px;
+            outline-color: teal;
+        }
+        .btn{
+            width: 100px;
+            height: 34px;
+            margin: auto;
+            display: block;
+            background: none;
+            border: 1px solid teal;
+            color: teal;
+            outline: none;
+        }
+        h2{
+            color: teal;
+            font-weight: normal;
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <h2 align="center">The longest word is: </h2>
+        <textarea name="Text1"></textarea>
+        <button class="btn" type="submit">Find</button>
+        
+        <script>
+
+            let div = document.getElementById('content')
+            let btn = div.querySelector('.btn')
+            let input = div.querySelector('textarea')
+            let txt = div.querySelector('h2')
+
+            // let isF = (el) => {
+            //     console.log(el)
+            //     console.log(arr.)
+            //     let new_el
+            //     return new_el
+            // }
+
+            btn.addEventListener('click',()=>{
+                let arr = input.value.trim().split(' ')
+                let new_arr = arr.map((el)=>{
+                    let r = /^[\w-]+$/
+                    let r2 = /[,.:;]/g
+                    let r3 = /\w*\.?\w*\(.*/    // This pattern finds a f() in a string
+                    if(!r3.test(el)){
+                        if(!r.test(el)){
+                            return el.replace(r2, '')
+                        } else { 
+                            return el 
+                        }
+                    } else {
+                        let f_open, f_close
+                        let isF = (el) => {
+                            // console.log(el)
+                            f_open = arr.indexOf(el)
+                            // console.log(f_open)
+                            f_close = (() => {    
+                                for(let b = f_open; b <= arr.length - 1; b++){
+                                    if(arr[b].includes(')')){
+                                        return arr.indexOf(arr[b]) + 1
+                                    }
+                                }
+                            })()
+                            
+                            return arr.slice(f_open, f_close).join('').replace(/\,$/, '')
+                        }
+                        let newEl = isF(el)
+                        arr.splice(f_open + 1, f_close - f_open - 1)
+                        return newEl
+                    }
+                });
+                let longstr;
+                let def_l = 0
+                while(new_arr[new_arr.length - 1] == undefined){new_arr.pop()}
+                new_arr = new_arr.sort((word1, word2) => word2.length - word1.length) // 
+                console.log(new_arr)
+                for(let el of new_arr){
+                    if(el.length > def_l){
+                        def_l = el.length
+                        longstr = el
+                    }
+                }
+                txt.innerHTML += `<b>${longstr}</b>`;
+            })
+
+        </script>
+    </div>
+</body>
+</html>
