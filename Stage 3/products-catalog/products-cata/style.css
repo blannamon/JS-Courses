@@ -32,11 +32,7 @@
             box-shadow: 2px 2px 6px #d0d0d0,
                 -2px -2px 6px #ffffff;
         }
-
-        .col-md:hover .info-container h4 {
-            color: rgba(0, 168, 219, 0.666);
-        }
-
+        
         .col-md .img-container {
             position: relative;
             width: 100%;
@@ -47,37 +43,64 @@
             max-height: 200px;
             padding: 0 4px 4px;
             box-shadow: inset 3px -2px 6px #d0d0d0,
-                inset -6px -6px 6px #ffffff;
+            inset -6px -6px 6px #ffffff;
         }
-
+        
         .col-md .img-container .img {
             width: 100%;
             border-radius: 0 0 7px 7px;
         }
-
+        
         .col-md .owl-carousel {
             min-height: inherit !important;
         }
-
+        
         .owl-nav {
             font-size: 30px;
             color: white;
             position: absolute;
             width: 100%;
             bottom: 0;
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: center;
         }
-
+        
         .owl-nav button {
             background-color: rgba(255, 255, 255, 0.3) !important;
-            width: 50%;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin: 0 6px 12px;
             outline: none;
             transition: background-color 0.2s;
+        }
+        
+        .owl-nav button span{
+            transform: translateY(-5px);
+            display: inline-block;
+        }
+
+        .owl-nav button.owl-prev {
+            order: 1;
+        }
+        
+        .owl-nav button.owl-next {
         }
 
         .owl-nav button:hover {
             background-color: rgba(255, 255, 255, 0.6) !important;
         }
 
+        .owl-item img {
+            transform: scale(0.6, 0.6);
+            transition: transform 0.6s;
+        }
+
+        .owl-item.active img{
+            transform: scale(1);
+        }
+        
         .col-md .info-container {
             position: relative;
             border-top: none;
@@ -90,19 +113,28 @@
         .col-md .info-container h4 {
             color: rgb(199, 199, 199);
             text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5),
-                         -1px -1px 0 rgba(0, 0, 0, 0.03);
-            transition: color 0.35s;
-            transition-delay: 0.1s;
+            -1px -1px 0 rgba(0, 0, 0, 0.03);
+            transition: all 0.35s;
+            transition-delay: 0.05s;
             margin-bottom: 4px;
             font-weight: normal;
             width: calc(100% - 70px);
+            text-shadow: 0 0 0px rgba(0, 168, 219, 0.6),
+                         0 0 0px rgba(0, 168, 219, 0.1);
+
+        }
+
+        .col-md:hover .info-container h4 {
+            color: rgba(0, 168, 219, 0.8);
+            text-shadow: 0 0 2px rgba(0, 168, 219, 0.6),
+                         0 0 7px rgba(0, 168, 219, 0.1);
         }
         
         .col-md .info-container h6 {
             width: calc(100% - 70px);
             font-weight: normal;
             text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5),
-                        -1px -1px 0 rgba(0, 0, 0, 0.03);
+            -1px -1px 0 rgba(0, 0, 0, 0.03);
         }
 
         .qty-container {
@@ -123,11 +155,12 @@
                 3px 3px 4px #ffffff;
         }
 
-        .qty-container p {
+        .qty-container p:not(.preloader) {
             color: lightgrey;
             margin-bottom: 0;
-            transition: transform 0.2s;
-            transition-delay: 0.05s;
+            opacity: 0;
+            transition: transform 0.2s, color 0.25s, opacity 0.3s;
+            transition-delay: 0.05s, 0.04s, 0s;
         }
 
         .qty-container p.quantity {
@@ -141,6 +174,8 @@
 
         .col-md:hover .qty-container p {
             transform: translateX(0%);
+            color: rgba(28, 187, 236, 0.897);
+            opacity: 1;
         }
 
         .qty-container .quantity {
@@ -156,14 +191,14 @@
             right: 0;
             bottom: 0;
             margin: auto;
-            width: 7%;
-            height: 7%;
-            background-color: rgba(0, 168, 219, 0.15);
+            width: 8%;
+            height: 8%;
+            background-color: rgba(0, 212, 219, 0.2);
             border-radius: 50%;
             animation: levitate 1.5s linear infinite;
             /* animation-fill-mode: forwards; */
             /* animation-direction: alternate; */
-            transition: height 0.3s, width 0.45s;
+            transition: height 0.3s, width 0.3s;
         }
         @keyframes levitate {
             0% {

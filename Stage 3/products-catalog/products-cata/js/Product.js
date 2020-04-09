@@ -12,10 +12,17 @@ class Product {
         Object.keys(currency).includes('amount') && Object.keys(currency).includes('currency') ? this.currency = currency : console.error('Currency must be an object containing "currency" and "amount" properties');
 
         Number.isInteger(quantity) ? this.quantity = quantity : console.error('Quantity must be an integer');
+
     }
+
+
+
+
 
     render(){
         let div = create('div', parent.querySelector('.row'), 'col-md');
+        this.element = div;
+        this.currentlyHovered = false;
         
         // Upper part - Images
         let imageContainer = create('div', div, 'img-container owl-carousel');
@@ -35,7 +42,7 @@ class Product {
         let leftTxt = create('p', qtyContainer, 'txt-qty', 'left');
         let preloader = create('p', qtyContainer, 'preloader');
         let priceContainer = create('div', infoContainer, 'price-container');
-
+        
         return div    
 
     }

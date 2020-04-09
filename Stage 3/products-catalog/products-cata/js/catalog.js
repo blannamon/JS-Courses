@@ -28,11 +28,22 @@ function create(tagName, parentObj, ...rest){
 }
 
 
-function renderProductsGrid( /*selector*/ ){
-    // let wrapper = document.querySelector( selector )
+function renderProductsGrid(){
         products.forEach(  
-            product => /*wrapper.appendChild(*/ product.render() //)
+            product =>  product.render()
         )
 }
 renderProductsGrid()
 
+ function adjustHeight() {
+        let img = document.querySelector('.owl-item.active .img')
+        console.log(img.getBoundingClientRect().height)
+    }
+
+let arr = document.getElementsByClassName('owl-prev')
+window.addEventListener('load', () => {
+    Object.keys(arr).forEach(element => {
+        arr[element].addEventListener('click', () => {console.log('YES')})
+    })
+
+})
